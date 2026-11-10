@@ -1,0 +1,55 @@
+{
+    "quizzes": [
+        {
+            "question": "다음 중 '도서관'을 뜻하는 중국어 단어의 병음은?",
+            "choices": [
+                "túshūguǎn",
+                "bówùguǎn",
+                "tǐyùguǎn",
+                "zhǎnlǎnguǎn"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "단어 '经常(jīngcháng)'의 뜻은 무엇일까요?",
+            "choices": [
+                "가끔",
+                "자주, 종종",
+                "결코 ~않다",
+                "방금"
+            ],
+            "answer": 2
+        },
+        {
+            "question": "다음 중 '중요하다'를 뜻하는 단어는?",
+            "choices": [
+                "需要 (xūyào)",
+                "主要 (zhǔyào)",
+                "重要 (zhòngyào)",
+                "只要 (zhǐyào)"
+            ],
+            "answer": 3
+        },
+        {
+            "question": "단어 '突然(tūrán)'과 가장 잘 어울리는 뜻은?",
+            "choices": [
+                "당연히",
+                "비로소",
+                "여전히",
+                "갑자기"
+            ],
+            "answer": 4
+        },
+        {
+            "question": "'마시다'라는 뜻의 동사 '喝(hē)'와 함께 쓰기 가장 적절한 단어는?",
+            "choices": [
+                "面包 (miànbāo)",
+                "饮料 (yǐnliào)",
+                "苹果 (píngguǒ)",
+                "米饭 (mǐfàn)"
+            ],
+            "answer": 2
+        }
+    ],
+    "best_score": 0
+}
