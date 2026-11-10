@@ -70,7 +70,6 @@ class QuizGame:
                 sys.exit(0)
 
     def play_quiz(self):
-        """요구사항 6: 퀴즈 출제 및 정답 확인"""
         if not self.quizzes:
             print("\n⚠️ 등록된 퀴즈가 없습니다. 퀴즈를 먼저 추가해주세요.")
             return
@@ -97,7 +96,7 @@ class QuizGame:
                 except ValueError:
                     print("⚠️ 숫자로만 입력해주세요.")
                 except (KeyboardInterrupt, EOFError):
-                    print("\n\n⚠️ 풀이 중 강제 종료되었습니다. 현재까지의 상태를 저장합니다.")
+                    print("\n\n⚠️ 풀이 중 강제 종료되었습니다.")
                     self.save_data()
                     sys.exit(0)
 
@@ -109,12 +108,61 @@ class QuizGame:
         
         print("\n========================================")
         print(f"🏆 결과: {len(self.quizzes)}문제 중 {score}문제 정답!")
-        
         if score > self.best_score:
             print("🎉 새로운 최고 점수입니다!")
             self.best_score = score
             self.save_data()
         print("========================================")
+
+    # 📌 새로 추가된 기능 1: 퀴즈 추가
+    def add_quiz(self):
+        """요구사항 7: 퀴즈 추가 기능"""
+        print("\n📌 새로운 퀴즈를 추가합니다.")
+        try:
+            question = input("문제를 입력하세요: ").strip()
+            if not question:
+                print("⚠️ 빈 입력입니다. 메뉴로 돌아갑니다.")
+                return
+                
+            choices = []
+            for i in range(1, 5):
+                choice = input(f"선택지 {i}: ").strip()
+                if not choice:
+                    print("⚠️ 빈 입력입니다. 메뉴로 돌아갑니다.")
+                    return
+                choices.append(choice)
+                
+            ans_str = input("정답 번호 (1-4): ").strip()
+            ans_int = int(ans_str)
+            if ans_int < 1 or ans_int > 4:
+                print("⚠️ 1-4 사이의 숫자를 입력해야 합니다. 메뉴로 돌아갑니다.")
+                return
+                
+            new_quiz = Quiz(question, choices, ans_int)
+            self.quizzes.append(new_quiz)
+            self.save_data()
+            print("\n✅ 퀴즈가 추가되었습니다!")
+        except ValueError:
+            print("⚠️ 잘못된 입력입니다. 메뉴로 돌아갑니다.")
+        except (KeyboardInterrupt, EOFError):
+            print("\n⚠️ 입력이 취소되었습니다.")
+
+    # 📌 새로 추가된 기능 2: 퀴즈 목록
+    def show_list(self):
+        """요구사항 8: 퀴즈 목록 확인"""
+        if not self.quizzes:
+            print("\n⚠️ 등록된 퀴즈가 없습니다.")
+            return
+        print(f"\n📋 등록된 퀴즈 목록 (총 {len(self.quizzes)}개)")
+        for idx, quiz in enumerate(self.quizzes, 1):
+            print("----------------------------------------")
+            print(f"[{idx}] {quiz.question}")
+        print("----------------------------------------")
+
+    # 📌 새로 추가된 기능 3: 점수 확인
+    def show_score(self):
+        """요구사항 9: 점수 확인"""
+        print(f"\n🏆 최고 점수: {self.best_score * 20}점 ({self.best_score}문제 정답)")
 
     def run(self):
         while True:
@@ -122,13 +170,13 @@ class QuizGame:
             choice = self.get_user_input()
 
             if choice == 1:
-                self.play_quiz() # 📌 방금 추가한 퀴즈 풀기 기능 연결!
+                self.play_quiz()
             elif choice == 2:
-                print("\n[알림] 퀴즈 추가 기능은 곧 구현됩니다!")
+                self.add_quiz()  # 추가 기능 연결
             elif choice == 3:
-                print("\n[알림] 퀴즈 목록 기능은 곧 구현됩니다!")
+                self.show_list() # 목록 기능 연결
             elif choice == 4:
-                print("\n[알림] 점수 확인 기능은 곧 구현됩니다!")
+                self.show_score()# 점수 기능 연결
             elif choice == 5:
                 self.save_data()
                 print("\n게임을 종료합니다. 수고하셨습니다!")
