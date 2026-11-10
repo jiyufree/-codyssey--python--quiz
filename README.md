@@ -1,3 +1,5 @@
+
+
 # 🎯 나만의 퀴즈 게임 (HSK 3급)
 
 ## 📖 1. 미션 소개
@@ -57,3 +59,15 @@ python main.py
 - `game.py`: `QuizGame` 클래스 (메뉴, 입력, 파일 입출력 로직)
 - `quiz.py`: `Quiz` 클래스 (퀴즈 데이터 및 정답 확인 로직)
 - `state.json`: 프로그램 종료 시 데이터가 보존되는 JSON 로컬 데이터베이스
+
+
+
+```
+
+개발 환경 설정 스크린샷(예: VSCode, Python 버전, Git 설정)<img width="956" height="1011" alt="파이썬 한거 " src="https://github.com/user-attachments/assets/978bced4-d2cc-4e68-9e64-25eff0b1500f" />
+
+<img width="1227" height="251" alt="중국어 퀴즈 " src="https://github.com/user-attachments/assets/ae74919c-17db-4c3b-96d7-3e295ab5e9bd" />
+중국어 퀴즈 스크린샷
+
+<img width="1107" height="432" alt="로그 log" src="https://github.com/user-attachments/assets/19f7ff7b-5f54-42f8-9197-b72fec57f297" />
+git log --oneline --graph 결과 스크린샷
